@@ -1,15 +1,22 @@
 <?php
+//arquivo de conexao com BD usando mysqli
+mysqli_report(MYSQLI_REPORT_STRICT);
 
-//Criar as constantes com as credencias de acesso ao banco de dados
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', '');
-define('DBNAME', 'db_lanches');
+function open_database() {
+	try {
+		$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+		return $conn;
+	} catch (Exception $e) {
+		echo $e->getMessage();
+		return null;
+	}
+}
 
-try {
-    $conn = new pdo('mysql:host=' . HOST . ';dbname=' . DBNAME, USER, PASS);
-    echo "Conexão com banco de dados realizada com sucesso.";
-} catch (PDOException $e) {
-    echo "Erro: Conexão com banco de dados não foi realizada com sucesso. Erro gerado " . $e->getMessage();
+function close_database($conn) {
+	try {
+		mysqli_close($conn);
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
 }
 ?>
