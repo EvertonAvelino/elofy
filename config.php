@@ -23,3 +23,7 @@ if ( !defined('BASEURL') )
 /** caminho do arquivo de banco de dados **/
 if ( !defined('DBAPI') )
 	define('DBAPI', ABSPATH . '/bootstrap/inc/database.php');
+
+/** caminhos dos templates de header e footer **/	
+define('HEADER_TEMPLATE', ABSPATH . 'bootstrap/inc/header.php');
+define('FOOTER_TEMPLATE', ABSPATH . 'bootstrap/inc/footer.php');	
