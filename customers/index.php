@@ -50,7 +50,7 @@
             <td><?php echo $customer['peso']; ?></td>
             <td><?php echo $customer['atleta']; ?></td>
 
-            <td><?php echo $customer['modified']; ?></td>
+            <td><?php //echo $customer['modified']; ?></td>
             <td class="actions text-right">
                 <a href="view.php?id=<?php echo $customer['id']; ?>" class="btn btn-sm btn-success"><i
                         class="fa fa-eye"></i> Visualizar</a>
